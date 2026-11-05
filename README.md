@@ -277,4 +277,3 @@ GitHub: [Christoffel's Restaurant Menu Manager](https://github.com/Ntombii/Chris
 
 ---
 
-*Developed as part of my Mobile Application Development learning journey.*
