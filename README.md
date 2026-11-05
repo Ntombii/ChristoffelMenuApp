@@ -1,56 +1,280 @@
-# Welcome to your Expo app 👋
+# Christoffel's Restaurant Menu Manager
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A mobile restaurant menu management application developed using **React Native and Expo**. The application allows restaurant administrators to manage menu items, organise dishes by course, update prices, search menu listings and view menu statistics.
 
-## Get started
+The application provides a simple and user-friendly interface for managing restaurant menu information efficiently.
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## Table of Contents
 
-2. Start the app
+- [About the Project](#about-the-project)
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Built With](#built-with)
+- [Application Structure](#application-structure)
+- [Getting Started](#getting-started)
+- [Installation](#installation)
+- [Running the Application](#running-the-application)
+- [Application Functionality](#application-functionality)
+- [Data Storage](#data-storage)
+- [Future Improvements](#future-improvements)
+- [Author](#author)
 
-   ```bash
-   npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## About the Project
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Christoffel's Restaurant Menu Manager is a mobile application designed to simplify the management of restaurant menu listings.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+The application provides restaurant administrators with the ability to add new dishes, edit existing menu information, delete unavailable items and view individual menu item details.
 
-## Get a fresh project
+It also includes menu statistics to provide an overview of the restaurant's menu, including the total number of available dishes, average menu prices and the distribution of items across different courses.
 
-When you're ready, run:
+The application was developed as part of my Mobile Application Development learning journey, with a focus on implementing practical React Native concepts, component-based development, navigation and local data persistence.
 
-```bash
-npm run reset-project
+## Features
+
+### 1. Home Screen
+- Displays the restaurant's menu items.
+- Presents menu information using individual menu cards.
+- Displays dish names, descriptions, prices and course categories.
+- Provides navigation to other application screens.
+
+### 2. Search Menu Items
+- Search for menu items by dish name.
+- Search using menu item descriptions.
+- Dynamically updates the displayed menu results.
+
+### 3. Filter by Course
+- Filter menu items according to their course.
+- Available categories include:
+  - Starters
+  - Mains
+  - Desserts
+  - All Courses
+- Displays matching menu items based on the selected category.
+
+### 4. Add New Menu Item
+- Add new dishes to the restaurant menu.
+- Capture dish names and descriptions.
+- Assign menu items to specific courses.
+- Enter menu item prices.
+- Select and preview food photographs (when image upload is integrated).
+- Save new menu items to local storage.
+
+### 5. View Menu Items
+- View individual menu item information.
+- Displays dish details in a read-only format.
+- Prevents accidental modification while viewing.
+
+### 6. Edit Menu Items
+- Update existing dish information.
+- Modify descriptions, prices and course categories.
+- Change menu item photographs (when image upload is integrated).
+- Save updated information.
+
+### 7. Delete Menu Items
+- Remove existing dishes from the menu.
+- Displays a confirmation message before deletion.
+- Updates the menu after successful deletion.
+
+### 8. Menu Statistics
+Provides an overview of the restaurant's menu through a dedicated statistics screen.
+
+The statistics include:
+
+- **Total Menu Items:** Displays the total number of dishes available on the menu.
+- **Average Menu Price:** Calculates the average price across all menu items.
+- **Items by Course:** Displays the number of dishes available in each course category.
+- **Average Price by Course:** Calculates the average price of Starter, Mains and Dessert items separately.
+
+The statistics are calculated using the menu information stored in the application.
+
+---
+
+## Screenshots
+
+Add screenshots of your application below to demonstrate its interface and functionality.
+
+| Home Screen | Add Menu Screen |
+|---|---|
+| Add your home screen screenshot here | Add your add menu screenshot here |
+
+| Edit Menu Screen | Menu Statistics |
+|---|---|
+| Add your edit menu screenshot here | Add your statistics screenshot here |
+
+---
+
+## Built With
+
+The application was developed using the following technologies and libraries:
+
+| Technology | Purpose |
+|---|---|
+| React Native | Mobile application development |
+| Expo | Development and application runtime |
+| JavaScript | Application logic and functionality |
+| Expo Router | Screen navigation and routing |
+| AsyncStorage | Local data persistence |
+| React Hooks | State management and lifecycle handling |
+| React Native Picker | Course selection |
+| Expo Font | Custom typography |
+| Instrument Serif | Application typography |
+| Expo Image Picker | Gallery image selection (when integrated) |
+
+---
+
+## Application Structure
+
+The project follows an Expo Router-based folder structure.
+
+```text
+ChristoffelMenuApp/
+│
+├── app/
+│   ├── (tabs)/
+│   │
+│   ├── home.js
+│   ├── add_menu.js
+│   ├── edit_menu.js
+│   ├── menu_stats.js
+│   │
+│   └── _layout.js
+│
+├── assets/
+│   ├── images/
+│   │   ├── logo.png
+│   │   ├── butter.jpeg
+│   │   ├── bone.jpeg
+│   │   └── creme.jpeg
+│   │
+│   └── fonts/
+│
+├── package.json
+├── app.json
+└── README.md
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+*Note: Adjust the folder structure to match your actual project directories.*
 
-### Other setup steps
+---
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+## Getting Started
 
-## Learn more
+To run the project locally, ensure that you have the following installed:
 
-To learn more about developing your project with Expo, look at the following resources:
+- Node.js
+- npm
+- Expo CLI / Expo development environment
+- Visual Studio Code (recommended)
+- Expo Go on your mobile device (or an appropriate emulator)
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Installation
 
-## Join the community
+**1. Clone the repository**
 
-Join our community of developers creating universal apps.
+```bash
+git clone https://github.com/Ntombii/ChristoffelMenuApp.git
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+**2. Navigate to the project directory**
+
+```bash
+cd ChristoffelMenuApp
+```
+
+**3. Install project dependencies**
+
+```bash
+npm install
+```
+
+**4. Install Expo Image Picker if using menu image uploads**
+
+```bash
+npx expo install expo-image-picker
+```
+
+**5. Start the development server**
+
+```bash
+npx expo start
+```
+
+Scan the QR code using Expo Go or run the application using an available emulator.
+
+---
+
+## Application Functionality
+
+### Data Management
+
+The application uses AsyncStorage to store menu information locally on the device.
+
+Menu items are saved using the following storage key:
+
+```javascript
+menuItems
+```
+
+Each menu item contains the following information:
+
+```javascript
+{
+  id: "1",
+  name: "Butternut Soup with Shrimp",
+  description: "Roasted & topped with pan-seared shrimp",
+  course: "Starter",
+  price: "R130.00",
+  image: "menu-image-uri"
+}
+```
+
+The application retrieves the stored menu information when the Home Screen is opened or revisited.
+
+### Menu Statistics Calculations
+
+The statistics screen uses the stored menu data to calculate:
+
+- Total number of menu items.
+- Average price across all menu items.
+- Number of items in each course.
+- Average price for each course.
+
+The calculations are updated when menu items are added, edited or deleted.
+
+---
+
+## Future Improvements
+
+Potential improvements for future versions include:
+
+- Cloud-based data storage and synchronisation.
+- Administrator authentication and role management.
+- Menu item image management and permanent image storage.
+- Exporting menu statistics into PDF or Excel reports.
+- Sales and revenue reporting.
+- Menu availability management.
+- Improved dashboard visualisations.
+
+---
+
+## Author
+
+**Ntombozuko Mangcingwana**
+
+Mobile Application and Web Developer Student
+
+This project demonstrates practical application development skills, including React Native, JavaScript, navigation, local storage, UI design and mobile application functionality.
+
+---
+
+## Repository
+
+GitHub: [Christoffel's Restaurant Menu Manager](https://github.com/Ntombii/ChristoffelMenuApp)
+
+---
+
+*Developed as part of my Mobile Application Development learning journey.*

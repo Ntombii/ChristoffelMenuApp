@@ -17,6 +17,7 @@ All notable changes to the Christoffel Menu App will be documented in this file.
 ### Changed
 - Improved home screen navigation.
 - Updated menu interface and styling.
+- Updated add_menu.js and edit_menu.js to save uploaded images as base64 data in AsyncStorage instead of temporary gallery URIs.
 
 ### Fixed
 - Fixed navigation issues between screens.
