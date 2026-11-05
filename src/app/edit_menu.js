@@ -9,8 +9,9 @@ import {
   SafeAreaView,
   Alert,
   ScrollView,
+  Image,
 } from "react-native";
-
+import * as ImagePicker from "expo-image-picker";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import {
@@ -37,6 +38,9 @@ export default function EditMenu() {
   const [course, setCourse] =
     useState("");
 
+  const [selectedImage, setSelectedImage] = 
+  useState(null);
+  
   const [price, setPrice] =
     useState("");
 
@@ -118,6 +122,10 @@ export default function EditMenu() {
           selectedItem.course || ""
         );
 
+        setSelectedImage(
+          selectedItem.image || null
+        );
+
         setPrice(
           selectedItem.price
             ? selectedItem.price
@@ -151,7 +159,39 @@ export default function EditMenu() {
 
   }, [itemId]);
 
+// Select or change the menu item image
+const pickImage = async () => {
+  try {
+    const permission =
+      await ImagePicker.requestMediaLibraryPermissionsAsync();
 
+    if (!permission.granted) {
+      Alert.alert(
+        "Permission Required",
+        "Please allow access to your photo gallery."
+      );
+      return;
+    }
+
+    const result =
+      await ImagePicker.launchImageLibraryAsync({
+        mediaTypes: ["images"],
+        allowsEditing: true,
+        aspect: [1, 1],
+        quality: 0.8,
+      });
+
+    if (!result.canceled && result.assets?.length > 0) {
+      setSelectedImage(result.assets[0].uri);
+    }
+  } catch (error) {
+    console.log("Image picker error:", error);
+    Alert.alert(
+      "Image Upload Failed",
+      "The image could not be selected. Please try again."
+    );
+  }
+};
 //save function
   const handleSave = async () => {
 
@@ -243,7 +283,7 @@ export default function EditMenu() {
             ? price.trim()
             : `R${price.trim()}`,
 
-        image: existingImage,
+        image: selectedImage || existingImage,
 
       };
 
@@ -521,7 +561,43 @@ export default function EditMenu() {
 
         </View>
 
+{/* Menu item image */}
 
+<Text style={styles.label}>
+  Menu Item Image
+</Text>
+
+<View style={styles.imageContainer}>
+
+  {selectedImage ? (
+    <Image
+      source={
+        typeof selectedImage === "number"
+          ? selectedImage
+          : { uri: selectedImage }
+      }
+      style={styles.previewImage}
+    />
+  ) : (
+    <View style={styles.imagePlaceholder}>
+      <Text style={styles.placeholderText}>
+        No image available
+      </Text>
+    </View>
+  )}
+
+  {!isViewMode && (
+    <TouchableOpacity
+      style={styles.imageButton}
+      onPress={pickImage}
+    >
+      <Text style={styles.imageButtonText}>
+        {selectedImage ? "Change Image" : "Upload Image"}
+      </Text>
+    </TouchableOpacity>
+  )}
+
+</View>
         {/* price */}
 
         <Text style={styles.label}>

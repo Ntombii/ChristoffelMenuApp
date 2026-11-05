@@ -173,11 +173,19 @@ export default function HomeScreen() {
   const renderItem = ({ item }) => (
 
     <View style={styles.card}>
+{/* Display uploaded menu image */}
 
-     <Image
-        source={require("../../assets/images/logo.png")}
-        style={styles.image}
-      />
+<Image
+  source={
+    item.image
+      ? typeof item.image === "number"
+        ? item.image
+        : { uri: item.image }
+      : require("../../assets/images/logo.png")
+  }
+  style={styles.image}
+  resizeMode="cover"
+/>
 
 
       <View style={styles.cardContent}>
