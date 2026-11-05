@@ -178,11 +178,18 @@ const pickImage = async () => {
         mediaTypes: ["images"],
         allowsEditing: true,
         aspect: [1, 1],
-        quality: 0.8,
+        quality: 0.5,
+        base64: true,
+        exif: false,
       });
 
     if (!result.canceled && result.assets?.length > 0) {
-      setSelectedImage(result.assets[0].uri);
+      const asset = result.assets[0];
+      setSelectedImage(
+        asset.base64
+          ? `data:image/jpeg;base64,${asset.base64}`
+          : asset.uri
+      );
     }
   } catch (error) {
     console.log("Image picker error:", error);
