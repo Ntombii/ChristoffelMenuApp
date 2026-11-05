@@ -364,7 +364,7 @@ export default function HomeScreen() {
       {/* my menu statistics */}
       <TouchableOpacity
         style={styles.statsButton}
-        onPress={() => router.push("/menu-stats")}
+        onPress={() => router.push("/menu_stats")}
       >
         <Text style={styles.statsButtonText}>
           Menu Stats
