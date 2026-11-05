@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   StyleSheet,
   Alert,
+  Image,
 } from "react-native";
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -14,6 +15,8 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useRouter } from "expo-router";
 
 import { Picker } from "@react-native-picker/picker";
+
+import * as ImagePicker from "expo-image-picker";
 
 
 export default function AddMenu() {
@@ -24,6 +27,7 @@ export default function AddMenu() {
   const [description, setDescription] = useState("");
   const [course, setCourse] = useState("");
   const [price, setPrice] = useState("");
+  const [selectedImage, setSelectedImage] = useState(null);
 
 
 //clear form function
@@ -33,6 +37,7 @@ export default function AddMenu() {
     setDescription("");
     setCourse("");
     setPrice("");
+    setSelectedImage(null);
 
   };
 
@@ -45,6 +50,40 @@ export default function AddMenu() {
 
   };
 
+//image selection function
+// Select an image from the phone gallery
+const pickImage = async () => {
+  try {
+    const permission =
+      await ImagePicker.requestMediaLibraryPermissionsAsync();
+
+    if (!permission.granted) {
+      Alert.alert(
+        "Permission Required",
+        "Please allow access to your photo gallery."
+      );
+      return;
+    }
+
+    const result =
+      await ImagePicker.launchImageLibraryAsync({
+        mediaTypes: ["images"],
+        allowsEditing: true,
+        aspect: [1, 1],
+        quality: 0.8,
+      });
+
+    if (!result.canceled && result.assets?.length > 0) {
+      setSelectedImage(result.assets[0].uri);
+    }
+  } catch (error) {
+    console.log("Image picker error:", error);
+    Alert.alert(
+      "Image Upload Failed",
+      "The image could not be selected. Please try again."
+    );
+  }
+};
 
 //save function
   const handleSave = async () => {
@@ -78,7 +117,7 @@ export default function AddMenu() {
         ? price.trim()
         : `R${price.trim()}`,
 
-      image: require("../../assets/images/logo.png"),
+      image:selectedImage,
 
     };
 
@@ -226,7 +265,38 @@ export default function AddMenu() {
 
       </View>
 
+      {/* image selection section*/}
+      {/* Menu item image upload */}
 
+<Text style={styles.label}>
+  Menu Item Image
+</Text>
+
+<View style={styles.imageContainer}>
+
+  {selectedImage ? (
+    <Image
+      source={{ uri: selectedImage }}
+      style={styles.previewImage}
+    />
+  ) : (
+    <View style={styles.imagePlaceholder}>
+      <Text style={styles.placeholderText}>
+        No image selected
+      </Text>
+    </View>
+  )}
+
+  <TouchableOpacity
+    style={styles.imageButton}
+    onPress={pickImage}
+  >
+    <Text style={styles.imageButtonText}>
+      {selectedImage ? "Change Image" : "Upload Image"}
+    </Text>
+  </TouchableOpacity>
+
+</View>
       {/* price */}
 
       <Text style={styles.label}>
@@ -388,5 +458,46 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     fontSize: 18,
   },
+imageContainer: {
+  backgroundColor: "#F5F1F1",
+  padding: 15,
+  borderRadius: 12,
+  alignItems: "center",
+  marginBottom: 15,
+},
 
+previewImage: {
+  width: 150,
+  height: 150,
+  borderRadius: 12,
+  marginBottom: 12,
+},
+
+imagePlaceholder: {
+  width: 150,
+  height: 150,
+  borderRadius: 12,
+  backgroundColor: "#E5E5E5",
+  justifyContent: "center",
+  alignItems: "center",
+  marginBottom: 12,
+},
+
+placeholderText: {
+  color: "#777",
+  fontSize: 14,
+},
+
+imageButton: {
+  backgroundColor: "#0F4F4B",
+  paddingVertical: 12,
+  paddingHorizontal: 25,
+  borderRadius: 12,
+},
+
+imageButtonText: {
+  color: "#fff",
+  fontSize: 16,
+  fontWeight: "600",
+},
 });

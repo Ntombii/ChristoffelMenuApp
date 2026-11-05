@@ -33,7 +33,13 @@
           "imageWidth": 76
         }
       ],
-      "expo-font"
+      "expo-font",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow ChristoffelMenuApp to access your photos."
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true,
