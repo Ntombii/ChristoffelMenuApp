@@ -8,6 +8,7 @@ import {
   StyleSheet,
   Alert,
   Image,
+  ScrollView,
 } from "react-native";
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -189,7 +190,12 @@ const pickImage = async () => {
   };
   return (
 
-    <View style={styles.container}>
+    <ScrollView
+      style={styles.container}
+      contentContainerStyle={styles.scrollContent}
+      showsVerticalScrollIndicator={false}
+      keyboardShouldPersistTaps="handled"
+    >
 
       <View style={styles.header}>
 
@@ -355,7 +361,7 @@ const pickImage = async () => {
 
       </TouchableOpacity>
 
-    </View>
+    </ScrollView>
   );
 }
 
@@ -366,6 +372,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     padding: 20,
+  },
+
+  scrollContent: {
+    paddingBottom: 40,
   },
 
   header: {

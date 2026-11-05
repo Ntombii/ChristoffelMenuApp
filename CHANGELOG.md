@@ -2,7 +2,7 @@
 
 All notable changes to the Christoffel Menu App will be documented in this file.
 
-## [1.0.0] - 2026-11-05
+## [1.0.1] - 2026-11-05
 
 ### Added
 - Created the home screen.
@@ -21,6 +21,8 @@ All notable changes to the Christoffel Menu App will be documented in this file.
 ### Fixed
 - Fixed navigation issues between screens.
 - Improved form validation.
+- Fixed the upload Image button for it had a handler present but references ImagePicker without importing it
+- Debugged the add_menu.js.The prices input was not showing as well as the other buttons due to the form likely laid out in a fixed View. So the content below the image fals outside the visible viewport. Ive changed it to a scrollabble form.
 
 ## [Unreleased]
 
