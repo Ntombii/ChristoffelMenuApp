@@ -216,10 +216,6 @@ export default function MenuStatsScreen() {
             Menu Statistics
           </Text>
 
-          <Text style={styles.pageSubtitle}>
-            Overview of your restaurant menu
-          </Text>
-
         </View>
 
       </View>
@@ -239,33 +235,24 @@ export default function MenuStatsScreen() {
 
           <>
 
-            {/* TOTAL MENU ITEMS */}
+            {/* sum of menu items */}
 
             <View style={styles.totalCard}>
 
               <View>
                 <Text style={styles.totalLabel}>
-                  Total Menu Items
+                  Total Dishes on the Menu
                 </Text>
 
                 <Text style={styles.totalValue}>
                   {totalItems}
                 </Text>
-
-                <Text style={styles.totalDescription}>
-                  Dishes currently on your menu
-                </Text>
-              </View>
-
-              <View style={styles.totalIcon}>
-                <Text style={styles.totalEmoji}>
-                  🍴
-                </Text>
+               
               </View>
 
             </View>
 
-            {/* OVERALL AVERAGE PRICE */}
+            {/* average price menu */}
 
             <View style={styles.averageCard}>
 
@@ -277,14 +264,11 @@ export default function MenuStatsScreen() {
                 R{averagePrice.toFixed(2)}
               </Text>
 
-              <Text style={styles.averageDescription}>
-                Average price of all priced menu items
-              </Text>
 
             </View>
 
 
-            {/* AVERAGE PRICE PER COURSE */}
+            {/* av price per course */}
 
             <View style={styles.sectionHeader}>
 
@@ -293,7 +277,7 @@ export default function MenuStatsScreen() {
               </Text>
 
               <Text style={styles.sectionSubtitle}>
-                Compare the average prices of your dishes
+                Average price of menu items for each course
               </Text>
 
             </View>
