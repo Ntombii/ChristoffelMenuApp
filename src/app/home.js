@@ -557,4 +557,18 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#777",
   },
+  statsButton: {
+  backgroundColor: "#0F4F4B",
+  padding: 16,
+  borderRadius: 12,
+  alignItems: "center",
+  marginTop: 10,
+  marginBottom: 20,
+},
+
+statsButtonText: {
+  color: "#FFFFFF",
+  fontSize: 17,
+  fontWeight: "bold",
+},
 });
