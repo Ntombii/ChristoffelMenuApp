@@ -1,6 +1,5 @@
 # Changelog
 
-All notable changes to the Christoffel Menu App will be documented in this file.
 
 ## [1.0.2] - 2026-11-06
 

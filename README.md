@@ -10,7 +10,6 @@ The application provides a simple and user-friendly interface for managing resta
 
 - [About the Project](#about-the-project)
 - [Features](#features)
-- [Screenshots](#screenshots)
 - [Built With](#built-with)
 - [Application Structure](#application-structure)
 - [Getting Started](#getting-started)
@@ -22,6 +21,7 @@ The application provides a simple and user-friendly interface for managing resta
 - [Author](#author)
 
 ---
+![alt text](image.png)
 
 ## About the Project
 
@@ -93,20 +93,6 @@ The statistics are calculated using the menu information stored in the applicati
 
 ---
 
-## Screenshots
-
-Add screenshots of your application below to demonstrate its interface and functionality.
-
-| Home Screen | Add Menu Screen |
-|---|---|
-| Add your home screen screenshot here | Add your add menu screenshot here |
-
-| Edit Menu Screen | Menu Statistics |
-|---|---|
-| Add your edit menu screenshot here | Add your statistics screenshot here |
-
----
-
 ## Built With
 
 The application was developed using the following technologies and libraries:
@@ -156,9 +142,6 @@ ChristoffelMenuApp/
 ├── app.json
 └── README.md
 ```
-
-*Note: Adjust the folder structure to match your actual project directories.*
-
 ---
 
 ## Getting Started
@@ -251,13 +234,7 @@ The calculations are updated when menu items are added, edited or deleted.
 
 Potential improvements for future versions include:
 
-- Cloud-based data storage and synchronisation.
-- Administrator authentication and role management.
-- Menu item image management and permanent image storage.
-- Exporting menu statistics into PDF or Excel reports.
-- Sales and revenue reporting.
-- Menu availability management.
-- Improved dashboard visualisations.
+- Exporting menu statistics into PDF or Excel reports
 
 ---
 
