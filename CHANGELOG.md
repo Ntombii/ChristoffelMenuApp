@@ -2,7 +2,7 @@
 
 All notable changes to the Christoffel Menu App will be documented in this file.
 
-## [1.0.1] - 2026-11-05
+## [1.0.2] - 2026-11-06
 
 ### Added
 - Created the home screen.
@@ -12,6 +12,7 @@ All notable changes to the Christoffel Menu App will be documented in this file.
 - Added the ability to add new menu items.
 - Added the ability to edit existing menu items.
 - Added menu statistics screen.
+- Added image upload of menu items on Add Menu page
 
 
 ### Changed
