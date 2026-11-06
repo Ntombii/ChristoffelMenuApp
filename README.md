@@ -10,6 +10,7 @@ The application provides a simple and user-friendly interface for managing resta
 
 - [About the Project](#about-the-project)
 - [Features](#features)
+- [Screenshots](#screenshots)
 - [Built With](#built-with)
 - [Application Structure](#application-structure)
 - [Getting Started](#getting-started)
@@ -21,7 +22,6 @@ The application provides a simple and user-friendly interface for managing resta
 - [Author](#author)
 
 ---
-![alt text](image.png)
 
 ## About the Project
 
@@ -90,6 +90,20 @@ The statistics include:
 - **Average Price by Course:** Calculates the average price of Starter, Mains and Dessert items separately.
 
 The statistics are calculated using the menu information stored in the application.
+
+---
+
+## Screenshots
+
+
+
+| Home Screen | Add Menu Screen |
+|---|---|
+| ![homescreen](image.png) | ![add menu screen](image-1.png) |
+
+| Edit Menu Screen | Menu Statistics |
+|---|---|
+| ![edit items](image-2.png)| ![menu stats](image-3.png)|
 
 ---
 
