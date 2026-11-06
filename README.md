@@ -258,7 +258,7 @@ Potential improvements for future versions include:
 
 **Ntombozuko Mangcingwana**
 
-Mobile Application and Web Developer Student
+ST10504583
 
 This project demonstrates practical application development skills, including React Native, JavaScript, navigation, local storage, UI design and mobile application functionality.
 
