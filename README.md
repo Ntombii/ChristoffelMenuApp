@@ -95,7 +95,9 @@ The statistics are calculated using the menu information stored in the applicati
 
 ## Screenshots
 
-
+| SignUp Screen| Log In Screen |
+|---|---|
+|![Signup page](image-4.png)| ![login page](image-5.png)|
 
 | Home Screen | Add Menu Screen |
 |---|---|
