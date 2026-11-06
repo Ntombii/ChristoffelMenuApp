@@ -310,7 +310,7 @@ export default function MenuStatsScreen() {
 
             ))}
 
-            {/* EMPTY MENU MESSAGE */}
+            {/* menu message empty */}
 
             {totalItems === 0 && (
 
@@ -339,7 +339,7 @@ export default function MenuStatsScreen() {
 
             )}
 
-            {/* MENU SUMMARY */}
+            {/* menu summary */}
 
             <View style={styles.summaryCard}>
 
@@ -395,7 +395,7 @@ export default function MenuStatsScreen() {
 
             </View>
 
-            {/* BACK TO MENU */}
+            {/*back to menu button */}
 
             <TouchableOpacity
               style={styles.backToMenuButton}
@@ -425,7 +425,7 @@ export default function MenuStatsScreen() {
 }
 
 
-// STYLES
+// my styles
 
 const styles = StyleSheet.create({
 
@@ -435,7 +435,7 @@ const styles = StyleSheet.create({
     padding: 15,
   },
 
-  // Header
+  // header
 
   header: {
     backgroundColor: "#0F4F4B",

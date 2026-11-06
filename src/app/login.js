@@ -54,7 +54,7 @@ export default function Login() {
         );
         return; 
       }
-      
+      // parse the saved user data from JSON string to object
       const user = JSON.parse(savedUser); 
       // =email and password validation
       const emailMatches = email.trim().toLowerCase() === user.email.toLowerCase();

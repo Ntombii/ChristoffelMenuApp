@@ -18,7 +18,7 @@ import {
   InstrumentSerif_400Regular,
 } from '@expo-google-fonts/instrument-serif';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
+//import { useRouter } from "expo-router";
 
 export default function Signup() {
     const [fontsLoaded] = useFonts({
@@ -32,6 +32,7 @@ export default function Signup() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState({});
 
+  // validate form function
   const validateForm = () => {
     let newErrors = {};
 
@@ -223,7 +224,7 @@ const handleRegister = async () => {
     </SafeAreaView>
   );
 }
-
+// my styles
 const styles = StyleSheet.create({
   container: {
     flex: 1,
